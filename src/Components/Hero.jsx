@@ -1,11 +1,12 @@
-
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom"; // 1. useNavigate import karein
 
 function Hero() {
+  const navigate = useNavigate(); // 2. Hook ko initialize karein
+
   return (
     <div className="relative w-full h-screen overflow-hidden">
-
       <video
         className="absolute inset-0 w-full h-full object-cover scale-125 brightness-50 contrast-125 saturate-150"
         src="/videos/iphone video.mp4"
@@ -16,13 +17,10 @@ function Hero() {
       />
 
       <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/60 to-black/90"></div>
-
       <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-500/20 blur-[120px]"></div>
-
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
       <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-6">
-
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,11 +51,12 @@ function Hero() {
         </motion.p>
 
         <div className="flex flex-col sm:flex-row gap-4 mt-10">
-
+          {/* --- EXPLORE NOW BUTTON MODIFIED --- */}
           <motion.button
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 text-white font-medium shadow-xl hover:shadow-indigo-500/50"
+           onClick={() => navigate("/Explore")}// 3. Click par Services page par navigate karein
+            className="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 text-white font-medium shadow-xl hover:shadow-indigo-500/50 cursor-pointer"
           >
             🚀 Explore Now
           </motion.button>
@@ -66,36 +65,21 @@ function Hero() {
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
+            onClick={() => navigate("/Watch")}
           >
-            ▶ Watch Demo
+            ▶ Watch 
           </motion.button>
-
         </div>
 
         <motion.div
           animate={{ y: [0, 12, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
           className="absolute bottom-10 flex flex-col items-center text-white/60"
-        >
-          <div className="w-5 h-9 border border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-2 bg-white mt-2 rounded-full"></div>
-          </div>
-          <span className="text-xs mt-2">Scroll</span>
-        </motion.div>
-
+        ></motion.div>
       </div>
     </div>
   );
 }
 
 export default Hero;
-
-
-
-
-
-
-
-
-
 

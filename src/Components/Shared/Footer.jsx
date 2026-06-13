@@ -160,7 +160,7 @@ export default function Footer() {
         </div>
       </motion.div>
 
-      <motion.button
+      {/* <motion.button
   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
   whileHover={{ scale: 1.15 }}
   whileTap={{ scale: 0.9 }}
@@ -171,7 +171,7 @@ export default function Footer() {
   shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
 >
   ↑ Top
-</motion.button>
+</motion.button> */}
 
     </footer>
   );

@@ -6,9 +6,13 @@ import About from './Pages/About'
 import Services from './Pages/Services'
 import Pricing from './Components/Pricing'
 import Contact from './Components/Shared/Contact'
-
+import Explore from './Components/Explore'
+import CardCounter from './Components/CardCounter'
+import Shopping from './Components/Shopping'
 
 import { motion } from "framer-motion";
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Watch from './Components/Watch'
 
 <motion.div
   initial={{ opacity: 0 }}
@@ -17,7 +21,6 @@ import { motion } from "framer-motion";
 >
   Fade In
 </motion.div>
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
   return (
@@ -28,7 +31,11 @@ function App() {
         <Route path='/About' element={<About/>}/>
         <Route path='/Services' element={<Services/>}/>
         <Route path='/Pricing' element={<Pricing/>}/>
+        <Route path='/Explore' element={<Explore/>}/>
+        <Route path='/CardCounter' element={<CardCounter/>}/>
         <Route path='/Contact' element={<Contact/>}/>
+        <Route path='/Shopping' element={<Shopping/>}/>
+        <Route path='/Watch' element={<Watch/>}/>
 
 
       </Routes>
@@ -45,3 +52,4 @@ function App() {
 }
 
 export default App
+
